@@ -123,7 +123,7 @@
     * type: function
     ``` js
         const router = new VueRouter({
-            routes: [...],
+            routes: [{...},...],
             scrollBehavior (to, from, savedPosition) {
                 // return 期望滚动到哪个的位置
                 //scrollBehavior 方法接收 to 和 from 路由对象。第三个参数 savedPosition 当且仅当 popstate 导航 (通过浏览器的 前进/后退 按钮触发) 时才可用。
@@ -137,3 +137,21 @@
         }
 })
     ```
+
+##### Router 实例方法
+* router.beforeEach
+* router.beforeResolve
+* router.afterEach
+``` js
+    router.beforeEach((to,from,next)=>{
+        // ...        
+    })
+
+    router.beforeResolve((to,from,next)=>{
+        // ...
+    })
+
+    router.afterEach((to,form)=>{
+        // ...
+    })
+```
